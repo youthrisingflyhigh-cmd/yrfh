@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Youth Rising Fly High | Bay Area, CA</title>
+  <meta name="description" content="YRFH empowers Bay Area youth through sports, culture, mentorship, and life skills. 501(c)(3) Nonprofit · EIN: 86-1229572"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; background: #FFFDF9; color: #1a1a1a; overflow-x: hidden; }
+
+    /* NAV */
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 36px; background: #FFFDF9; border-bottom: 1px solid #F0EBE0; position: sticky; top: 0; z-index: 50; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-svg { width: 42px; height: 42px; flex-shrink: 0; }
+    .nav-logo-name { font-size: 15px; font-weight: 900; color: #1a1a1a; line-height: 1.15; }
+    .nav-logo-name em { color: #FF6B35; font-style: normal; }
+    .nav-logo-loc { font-size: 10px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 24px; font-size: 14px; font-weight: 700; }
+    .nav-links a { color: #555; text-decoration: none; }
+    .nav-links a:hover { color: #FF6B35; }
+    .nav-right { display: flex; gap: 8px; align-items: center; }
+    .btn-secondary { background: #fff; color: #FF6B35; border: 2px solid #FF6B35; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
+    .btn-secondary:hover { background: #FFF5EE; }
+    .btn-donate-nav { background: #1a1a1a; color: #fff; border: none; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
+    .btn-donate-nav:hover { background: #333; }
+
+    /* HERO */
+    .hero { background: #FFF5EE; padding: 64px 36px 0; text-align: center; overflow: hidden; }
+    .hero-logo-mark { margin: 0 auto 18px; display: block; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: #FFE8DC; color: #C94A1A; font-size: 12px; font-weight: 800; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; border: 1.5px solid #FFCDB2; }
+    .hero h1 { font-size: 52px; font-weight: 900; color: #1a1a1a; line-height: 1.1; margin-bottom: 16px; max-width: 640px; margin-left: auto; margin-right: auto; }
+    .hero h1 em { color: #FF6B35; font-style: normal; }
+    .hero p { font-size: 16px; color: #666; line-height: 1.75; max-width: 500px; margin: 0 auto 32px; font-weight: 600; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-main { background: #FF6B35; color: #fff; border: none; padding: 16px 32px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
+    .btn-main:hover { background: #e55a26; }
+    .btn-outline { background: #fff; color: #FF6B35; border: 2.5px solid #FF6B35; padding: 13px 28px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
+    .btn-outline:hover { background: #FFF5EE; }
+
+    .hero-img-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; max-width: 720px; margin: 0 auto; }
+    .hero-img-card { border-radius: 20px 20px 0 0; overflow: hidden; height: 210px; position: relative; }
+    .hero-img-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-img-card .overlay { position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(26,26,26,0.45)); }
+    .hero-img-label { position: absolute; bottom: 10px; left: 12px; font-size: 11px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* MISSION */
+    .mission { padding: 64px 36px; text-align: center; background: #FFFDF9; }
+    .section-eyebrow { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #FF6B35; margin-bottom: 10px; }
+    .section-title { font-size: 34px; font-weight: 900; color: #1a1a1a; line-height: 1.15; margin-bottom: 14px; }
+    .section-sub { font-size: 15px; color: #666; line-height: 1.75; max-width: 560px; margin: 0 auto; font-weight: 600; }
+
+    /* PROGRAMS */
+    .prog-wrap { padding: 48px 36px 64px; background: #FFFDF9; }
+    .prog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 16px; }
+    .prog-card { background: #fff; border-radius: 20px; padding: 28px 20px; border: 2px solid #F0EBE0; text-align: center; transition: all 0.2s; }
+    .prog-card:hover { border-color: #FFCDB2; transform: translateY(-2px); }
+    .prog-emoji { font-size: 34px; margin-bottom: 14px; display: block; }
+    .prog-card h3 { font-size: 15px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; }
+    .prog-card p { font-size: 13px; color: #777; line-height: 1.6; font-weight: 600; }
+    .prog-tag { display: inline-block; margin-top: 12px; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 50px; }
+    .tag-free { background: #E8F5E9; color: #2E7D32; }
+    .tag-low { background: #FFF8E1; color: #F57F17; }
+
+    /* PHOTO GRID */
+    .photo-sec { padding: 0 36px 64px; background: #FFFDF9; }
+    .photo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .photo-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 16px; display: block; transition: transform 0.3s; }
+    .photo-grid img:hover { transform: scale(1.02); }
+    .photo-grid img:first-child { grid-column: span 2; height: 260px; }
+
+    /* COMMUNITY */
+    .community { background: #FFF5EE; padding: 64px 36px; border-top: 1px solid #F0EBE0; border-bottom: 1px solid #F0EBE0; }
+    .comm-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .comm-card { background: #fff; border-radius: 20px; padding: 24px 20px; border: 2px solid #F0EBE0; transition: all 0.2s; }
+    .comm-card:hover { border-color: #FFCDB2; transform: translateY(-2px); }
+    .comm-emoji { font-size: 28px; margin-bottom: 12px; display: block; }
+    .comm-card h3 { font-size: 15px; font-weight: 900; color: #1a1a1a; margin-bottom: 6px; }
+    .comm-card p { font-size: 13px; color: #777; line-height: 1.6; font-weight: 600; }
+    .comm-tag { display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 50px; background: #FFE8DC; color: #C94A1A; }
+
+    /* VALUES */
+    .values { padding: 64px 36px; text-align: center; background: #FFFDF9; }
+    .val-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 32px; }
+    .val-card { background: #fff; border-radius: 20px; padding: 28px 20px; border: 2px solid #F0EBE0; text-align: left; }
+    .val-num { font-size: 11px; font-weight: 800; color: #FF6B35; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+    .val-card h3 { font-size: 16px; font-weight: 900; color: #1a1a1a; margin-bottom: 6px; }
+    .val-card p { font-size: 13px; color: #777; line-height: 1.6; font-weight: 600; }
+
+    /* DONATE CTA */
+    .donate-cta { background: #FF6B35; padding: 64px 36px; text-align: center; }
+    .donate-cta h2 { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 14px; line-height: 1.15; }
+    .donate-cta p { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 480px; margin: 0 auto 32px; font-weight: 600; }
+    .btn-donate-big { background: #1a1a1a; color: #fff; padding: 18px 40px; border-radius: 50px; font-size: 16px; font-family: 'Nunito', sans-serif; font-weight: 900; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+    .btn-donate-big:hover { background: #333; }
+    .ein-note { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.7); font-weight: 700; }
+
+    /* FOOTER */
+    footer { background: #1a1a1a; padding: 48px 36px 32px; }
+    .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .foot-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .foot-logo-name { font-size: 16px; font-weight: 900; color: #fff; }
+    .foot-logo-name em { color: #FF6B35; font-style: normal; }
+    .foot-desc { font-size: 13px; color: #888; line-height: 1.65; margin-bottom: 16px; font-weight: 600; }
+    .foot-ein { background: #2a2a2a; border-radius: 10px; padding: 12px 16px; display: inline-block; }
+    .foot-ein-label { font-size: 10px; font-weight: 800; color: #FF6B35; text-transform: uppercase; letter-spacing: 1px; }
+    .foot-ein-val { font-size: 15px; font-weight: 900; color: #fff; margin-top: 2px; }
+    .foot-ein-sub { font-size: 11px; color: #666; margin-top: 2px; font-weight: 600; }
+    .foot-col-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #FF6B35; margin-bottom: 14px; }
+    .foot-col a { display: block; font-size: 13px; font-weight: 700; color: #888; text-decoration: none; margin-bottom: 10px; }
+    .foot-col a:hover { color: #fff; }
+    .foot-bottom { border-top: 1px solid #2a2a2a; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .foot-bottom p { font-size: 12px; color: #555; font-weight: 600; }
+    .legal { display: flex; gap: 16px; }
+    .legal a { font-size: 12px; color: #555; text-decoration: none; font-weight: 700; }
+    .legal a:hover { color: #FF6B35; }
+
+    /* MODAL */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: #fff; border-radius: 24px; padding: 36px 32px; max-width: 380px; width: 92%; position: relative; text-align: center; }
+    .modal-close { position: absolute; top: 14px; right: 18px; background: none; border: none; font-size: 22px; cursor: pointer; color: #aaa; }
+    .modal-close:hover { color: #111; }
+    .modal-box h3 { font-size: 24px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; }
+    .modal-sub { font-size: 14px; color: #777; margin-bottom: 24px; line-height: 1.6; font-weight: 600; }
+    .modal-donate-btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: #FF6B35; color: #fff; text-decoration: none; padding: 16px 24px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 800; margin-bottom: 12px; }
+    .modal-donate-btn:hover { background: #e55a26; }
+    .modal-ein { background: #FFF5EE; border-radius: 12px; padding: 12px 16px; font-size: 12px; color: #C94A1A; font-weight: 700; line-height: 1.6; }
+    .modal-ein strong { display: block; font-size: 14px; color: #8B3010; margin-bottom: 2px; }
+
+    /* LEGAL PAGES */
+    .legal-page { display: none; }
+    .legal-page.active { display: block; }
+    .legal-header { background: #1a1a1a; padding: 40px 36px; }
+    .legal-header h1 { font-family: 'Nunito', sans-serif; font-size: 32px; font-weight: 900; color: #fff; }
+    .legal-header p { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 6px; font-weight: 600; }
+    .legal-content { padding: 40px 36px; max-width: 720px; }
+    .legal-content h2 { font-size: 16px; font-weight: 800; color: #1a1a1a; margin: 28px 0 8px; padding-bottom: 8px; border-bottom: 1px solid #F0EBE0; }
+    .legal-content p { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 10px; font-weight: 600; }
+    .legal-content ul { padding-left: 18px; margin-bottom: 10px; }
+    .legal-content ul li { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 4px; font-weight: 600; }
+    .legal-content a { color: #FF6B35; }
+    .legal-note { font-size: 12px; color: #999; margin-top: 40px; padding-top: 16px; border-top: 1px solid #F0EBE0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 36px; }
+      .hero-img-strip { grid-template-columns: 1fr 1fr; }
+      .photo-grid { grid-template-columns: 1fr 1fr; }
+      .photo-grid img:first-child { grid-column: span 2; }
+      .comm-grid { grid-template-columns: 1fr; }
+      .foot-top { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      section, .prog-wrap, .photo-sec, .mission, .community, .values { padding-left: 20px; padding-right: 20px; }
+      .nav { padding: 13px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- DONATE MODAL -->
+<div class="modal-overlay" id="donateModal" role="dialog" aria-modal="true" aria-label="Donate to YRFH">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&#10005;</button>
+    <div style="font-size:40px;margin-bottom:12px">❤️</div>
+    <h3>Support YRFH</h3>
+    <p class="modal-sub">Every dollar goes directly to programs serving Bay Area youth. Thank you for investing in the next generation.</p>
+    <a class="modal-donate-btn" href="https://www.paypal.com/donate/?hosted_button_id=PYSS48NK89CPA" target="_blank" rel="noopener">❤️ Donate via PayPal</a>
+    <div class="modal-ein">
+      <strong>EIN: 86-1229572</strong>
+      Youth Rising Fly High is a 501(c)(3) nonprofit — donations are tax-deductible.
+    </div>
+  </div>
+</div>
+
+<!-- MAIN SITE -->
+<div id="main-site">
+
+  <nav class="nav">
+    <a class="nav-logo" href="#">
+      <svg class="nav-logo-svg" viewBox="0 0 60 60" aria-label="YRFH logo">
+        <path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/>
+        <path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/>
+        <circle cx="30" cy="24" r="7" fill="#1a1a1a"/>
+        <path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/>
+        <path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="nav-logo-name">Youth Rising <em>Fly High</em></div>
+        <div class="nav-logo-loc">Bay Area, CA</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#programs">Programs</a>
+      <a href="#events">Events</a>
+      <a href="#values">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn-secondary" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Get Involved</button>
+      <button class="btn-donate-nav" onclick="openModal()">Donate Now ❤️</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-logo-mark" width="72" height="72" viewBox="0 0 60 60" aria-hidden="true">
+      <path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/>
+      <path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/>
+      <circle cx="30" cy="24" r="7" fill="#1a1a1a"/>
+      <path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/>
+      <path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="hero-badge">📍 Bay Area, CA &nbsp;·&nbsp; EIN: 86-1229572</div>
+    <h1>Empowering Youth.<br><em>Elevating</em> Community.</h1>
+    <p>YRFH invests in Bay Area youth through sports, culture, mentorship, and life skills. We meet people where they are and help them rise.</p>
+    <div class="hero-btns">
+      <button class="btn-main" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Get Involved</button>
+      <button class="btn-outline" onclick="openModal()">Donate Now ❤️</button>
+    </div>
+    <div class="hero-img-strip">
+      <div class="hero-img-card">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="Youth basketball" onerror="this.parentElement.style.background='#ddd';this.style.display='none'"/>
+        <div class="overlay"></div>
+        <div class="hero-img-label">Sports</div>
+      </div>
+      <div class="hero-img-card">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Mentorship" onerror="this.parentElement.style.background='#ddd';this.style.display='none'"/>
+        <div class="overlay"></div>
+        <div class="hero-img-label">Mentorship</div>
+      </div>
+      <div class="hero-img-card">
+        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80" alt="Community" onerror="this.parentElement.style.background='#ddd';this.style.display='none'"/>
+        <div class="overlay"></div>
+        <div class="hero-img-label">Community</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <div class="mission">
+    <div class="section-eyebrow">Our mission</div>
+    <div class="section-title">Serving the community<br>through every outlet.</div>
+    <p class="section-sub">YRFH was built on one belief — invest in people, their discipline, their confidence, their community, and they rise. Sports, culture, mentorship, education. We show up in every space that shapes a young person's life.</p>
+  </div>
+
+  <!-- PROGRAMS -->
+  <div class="prog-wrap" id="programs">
+    <div class="prog-grid">
+      <div class="prog-card">
+        <span class="prog-emoji">🏀</span>
+        <h3>Sports Clinics</h3>
+        <p>Basketball-led training that builds discipline, teamwork, and competitive drive.</p>
+        <span class="prog-tag tag-low">Low / No Cost</span>
+      </div>
+      <div class="prog-card">
+        <span class="prog-emoji">🏀</span>
+        <h3>Camps</h3>
+        <p>Multi-day basketball and enrichment camps that push young people to grow.</p>
+        <span class="prog-tag tag-low">Low Cost</span>
+      </div>
+      <div class="prog-card">
+        <span class="prog-emoji">🤝</span>
+        <h3>Mentorship</h3>
+        <p>Real role models. One-on-one guidance that extends well beyond the court.</p>
+        <span class="prog-tag tag-free">Always Free</span>
+      </div>
+      <div class="prog-card">
+        <span class="prog-emoji">💪</span>
+        <h3>Work Ethic</h3>
+        <p>The same work ethic that wins on the court carries into the classroom and every area of life.</p>
+        <span class="prog-tag tag-free">Always Free</span>
+      </div>
+      <div class="prog-card">
+        <span class="prog-emoji">💡</span>
+        <h3>Life Skills</h3>
+        <p>Leadership, communication, and the mindset to succeed anywhere in life.</p>
+        <span class="prog-tag tag-free">Always Free</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO GRID -->
+  <div class="photo-sec">
+    <div class="photo-grid">
+      <img src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=800&q=80" alt="Basketball camp" onerror="this.style.display='none'"/>
+      <img src="https://images.unsplash.com/photo-1559692048-79a3f837883d?w=500&q=80" alt="Basketball training" onerror="this.style.display='none'"/>
+      <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=500&q=80" alt="Basketball tournament" onerror="this.style.display='none'"/>
+    </div>
+  </div>
+
+  <!-- COMMUNITY + FUNDING -->
+  <div class="community" id="events">
+    <div style="text-align:center">
+      <div class="section-eyebrow">Community + Funding</div>
+      <div class="section-title">The community powers the mission.</div>
+      <p class="section-sub">Every event we host is a chance to give back. Entry fees and donations go right back into the community that shows up for us.</p>
+    </div>
+    <div class="comm-grid">
+      <div class="comm-card">
+        <span class="comm-emoji">🏆</span>
+        <h3>Youth &amp; Adult Tournaments</h3>
+        <p>We run youth and adult tournaments to bring the whole community together — every dollar raised goes directly back into free programs across the Bay Area.</p>
+        <span class="comm-tag">Giving Back</span>
+      </div>
+      <div class="comm-card">
+        <span class="comm-emoji">🏅</span>
+        <h3>Adult Leagues</h3>
+        <p>Organized recreational leagues for adults in the Bay. When the community plays, the community wins — proceeds fund youth programming.</p>
+        <span class="comm-tag">Giving Back</span>
+      </div>
+      <div class="comm-card">
+        <span class="comm-emoji">❤️</span>
+        <h3>Donations</h3>
+        <p>501(c)(3) verified — all donations are tax-deductible. Every dollar goes back to the community.</p>
+        <span class="comm-tag">Tax-Deductible</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div class="values" id="values">
+    <div class="section-eyebrow">Our culture</div>
+    <div class="section-title">Code of the Court</div>
+    <div class="val-grid">
+      <div class="val-card">
+        <div class="val-num">01 — Respect</div>
+        <h3>On + Off the Court</h3>
+        <p>For teammates, coaches, opponents, and yourself.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">02 — Accountability</div>
+        <h3>Show Up</h3>
+        <p>Work hard, own it, earn trust.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">03 — Camaraderie</div>
+        <h3>Rise Together</h3>
+        <p>No one flies high leaving their team behind.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">04 — Growth</div>
+        <h3>Every Single Day</h3>
+        <p>Better in the game and better in life.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DONATE CTA -->
+  <div class="donate-cta">
+    <h2>Help Bay Area youth rise up. ✊</h2>
+    <p>Your support funds programs that serve the whole community. Every contribution — big or small — makes a difference.</p>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=PYSS48NK89CPA" target="_blank" rel="noopener" class="btn-donate-big">❤️ Donate Now via PayPal</a>
+    <div class="ein-note">EIN: 86-1229572 · Youth Rising Fly High is a 501(c)(3) nonprofit · Donations are tax-deductible</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">
+          <svg width="36" height="36" viewBox="0 0 60 60" aria-hidden="true">
+            <path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/>
+            <path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/>
+            <circle cx="30" cy="24" r="7" fill="#fff"/>
+            <path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/>
+            <path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="foot-logo-name">Youth Rising <em>Fly High</em></div>
+        </div>
+        <div class="foot-desc">Empowering Bay Area youth through sports, culture, mentorship, and community.</div>
+        <div class="foot-ein">
+          <div class="foot-ein-label">EIN · 501(c)(3) Nonprofit</div>
+          <div class="foot-ein-val">86-1229572</div>
+          <div class="foot-ein-sub">Donations are tax-deductible</div>
+        </div>
+      </div>
+      <div class="foot-col">
+        <div class="foot-col-label">Programs</div>
+        <a href="#programs">Sports Clinics</a>
+        <a href="#programs">Camps</a>
+        <a href="#programs">Mentorship</a>
+        <a href="#programs">Life Skills</a>
+        <a href="#events">Leagues + Tournaments</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-col-label">Organization</div>
+        <a href="#values">About YRFH</a>
+        <a href="https://www.paypal.com/donate/?hosted_button_id=PYSS48NK89CPA" target="_blank">Donate</a>
+        <a href="mailto:youthrisinflyhigh@gmail.com?subject=Sponsorship%20Inquiry">Sponsorships</a>
+        <a href="mailto:youthrisinflyhigh@gmail.com">Contact</a>
+        <a href="#" onclick="showLegal('terms');return false;">Terms of Use</a>
+        <a href="#" onclick="showLegal('privacy');return false;">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Youth Rising Fly High · youthrisinflyhigh@gmail.com · Bay Area, CA · EIN: 86-1229572</p>
+      <div class="legal">
+        <a href="#" onclick="showLegal('terms');return false;">Terms of use</a>
+        <a href="#" onclick="showLegal('privacy');return false;">Privacy policy</a>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- end #main-site -->
+
+<!-- TERMS OF USE -->
+<div id="page-terms" class="legal-page">
+  <nav class="nav">
+    <a class="nav-logo" href="#" onclick="hideLegal();return false;">
+      <svg class="nav-logo-svg" viewBox="0 0 60 60"><path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/><path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/><circle cx="30" cy="24" r="7" fill="#1a1a1a"/><path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/><path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><div class="nav-logo-name">Youth Rising <em>Fly High</em></div><div class="nav-logo-loc">Bay Area, CA</div></div>
+    </a>
+    <div class="nav-right">
+      <button class="btn-secondary" onclick="hideLegal()">← Back to Site</button>
+      <button class="btn-donate-nav" onclick="openModal()">Donate Now ❤️</button>
+    </div>
+  </nav>
+  <div class="legal-header"><h1>Terms of Use</h1><p>Effective date: May 27, 2026 · Youth Rising Fly High · EIN: 86-1229572</p></div>
+  <div class="legal-content">
+    <h2>1. Acceptance of terms</h2>
+    <p>By accessing or using the Youth Rising Fly High website and programs, you agree to these Terms of Use. If you do not agree, please do not use our site or services.</p>
+    <h2>2. About our organization</h2>
+    <p>Youth Rising Fly High is a 501(c)(3) nonprofit organization (EIN: 86-1229572) based in the Bay Area of California. Our programs — including sports clinics, camps, mentorship, and community events — are provided at low or no cost to participants.</p>
+    <h2>3. Program participation</h2>
+    <ul>
+      <li>Provide accurate information when registering for programs.</li>
+      <li>Follow all program rules, codes of conduct, and facility guidelines.</li>
+      <li>Acknowledge that participation in athletic activities involves inherent risk.</li>
+      <li>Ensure minors are registered with a parent or legal guardian's consent.</li>
+    </ul>
+    <h2>4. Website use</h2>
+    <p>All content on this website is owned by Youth Rising Fly High and may not be reproduced without written permission. You may use the site for lawful, personal, and non-commercial purposes only.</p>
+    <h2>5. Donations</h2>
+    <p>Donations are tax-deductible to the extent permitted by law. For questions contact <a href="mailto:youthrisinflyhigh@gmail.com">youthrisinflyhigh@gmail.com</a>.</p>
+    <h2>6. Disclaimer</h2>
+    <p>Programs and website content are provided "as is." Youth Rising Fly High is not liable for any injuries, losses, or damages arising from program participation or use of this website.</p>
+    <h2>7. Changes</h2>
+    <p>We may update these terms at any time. Continued use constitutes acceptance.</p>
+    <p class="legal-note">Last updated: May 27, 2026 · Youth Rising Fly High · EIN: 86-1229572</p>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div id="page-privacy" class="legal-page">
+  <nav class="nav">
+    <a class="nav-logo" href="#" onclick="hideLegal();return false;">
+      <svg class="nav-logo-svg" viewBox="0 0 60 60"><path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/><path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/><circle cx="30" cy="24" r="7" fill="#1a1a1a"/><path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/><path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><div class="nav-logo-name">Youth Rising <em>Fly High</em></div><div class="nav-logo-loc">Bay Area, CA</div></div>
+    </a>
+    <div class="nav-right">
+      <button class="btn-secondary" onclick="hideLegal()">← Back to Site</button>
+      <button class="btn-donate-nav" onclick="openModal()">Donate Now ❤️</button>
+    </div>
+  </nav>
+  <div class="legal-header"><h1>Privacy Policy</h1><p>Effective date: May 27, 2026 · Youth Rising Fly High · EIN: 86-1229572</p></div>
+  <div class="legal-content">
+    <h2>1. Overview</h2>
+    <p>Youth Rising Fly High respects your privacy. This policy explains what information we collect, how we use it, and your rights. We take the protection of personal information — especially that of minors — seriously.</p>
+    <h2>2. Information we collect</h2>
+    <ul>
+      <li>Name, age, and contact information when registering for programs.</li>
+      <li>Parent or guardian name and contact for minors.</li>
+      <li>Donation information for tax receipt purposes.</li>
+      <li>Basic website usage data via standard analytics.</li>
+    </ul>
+    <h2>3. How we use your information</h2>
+    <ul>
+      <li>To register and communicate with participants and families.</li>
+      <li>To send program schedules and updates.</li>
+      <li>To process donations and provide tax receipts.</li>
+    </ul>
+    <p>We do not sell, rent, or trade your personal information to any third party.</p>
+    <h2>4. Children's privacy</h2>
+    <p>We collect information about minors only with verifiable parental or guardian consent, in compliance with COPPA.</p>
+    <h2>5. Photos and media</h2>
+    <p>Photos or videos from our events may be used for promotional purposes only with a signed release from the participant's parent or guardian.</p>
+    <h2>6. Your rights</h2>
+    <p>Contact us at <a href="mailto:youthrisinflyhigh@gmail.com">youthrisinflyhigh@gmail.com</a> to access, correct, or delete your information.</p>
+    <p class="legal-note">Last updated: May 27, 2026 · Youth Rising Fly High · EIN: 86-1229572</p>
+  </div>
+</div>
+
+<script>
+  function openModal() { document.getElementById('donateModal').classList.add('open'); }
+  function closeModal() { document.getElementById('donateModal').classList.remove('open'); }
+  document.getElementById('donateModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  function showLegal(page) {
+    document.getElementById('main-site').style.display = 'none';
+    document.getElementById('page-terms').classList.remove('active');
+    document.getElementById('page-privacy').classList.remove('active');
+    document.getElementById('page-' + page).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+  function hideLegal() {
+    document.getElementById('main-site').style.display = 'block';
+    document.getElementById('page-terms').classList.remove('active');
+    document.getElementById('page-privacy').classList.remove('active');
+    window.scrollTo(0, 0);
+  }
+</script>
+</body>
+</html>
