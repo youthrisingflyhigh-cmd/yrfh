@@ -162,6 +162,16 @@
     .staff-role { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #C9A227; margin-bottom: 12px; }
     .staff-bio { font-size: 13px; color: #777; line-height: 1.65; font-weight: 600; }
 
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; flex-direction: column; gap: 5px; }
+    .nav-hamburger span { display: block; width: 24px; height: 3px; background: #1a1a1a; border-radius: 2px; transition: all 0.2s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .mobile-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid #F0EBE0; box-shadow: 0 8px 16px rgba(0,0,0,0.06); padding: 8px 20px 16px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { padding: 12px 0; font-size: 15px; font-weight: 700; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #F5F0E4; }
+    .mobile-menu a:last-child { border-bottom: none; }
+
     /* RESPONSIVE */
     @media (max-width: 700px) {
       .hero h1 { font-size: 36px; }
@@ -171,8 +181,10 @@
       .comm-grid { grid-template-columns: 1fr; }
       .foot-top { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-right .btn-secondary { display: none; }
       section, .prog-wrap, .photo-sec, .mission, .community, .values { padding-left: 20px; padding-right: 20px; }
-      .nav { padding: 13px 20px; }
+      .nav { padding: 13px 20px; position: relative; }
     }
   </style>
 </head>
@@ -233,6 +245,17 @@
     <div class="nav-right">
       <button class="btn-secondary" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Get Involved</button>
       <button class="btn-donate-nav" onclick="openModal()">Donate Now ❤️</button>
+      <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#programs" onclick="closeMobileMenu()">Get Involved</a>
+      <a href="#programs" onclick="closeMobileMenu()">Programs</a>
+      <a href="#events" onclick="closeMobileMenu()">Events</a>
+      <a href="#values" onclick="closeMobileMenu()">About</a>
+      <a href="#" onclick="closeMobileMenu();showLegal('staff');return false;">Staff</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
     </div>
   </nav>
 
@@ -483,7 +506,7 @@
         <div class="staff-avatar">M</div>
         <div class="staff-name">Matthew Ngiraswei</div>
         <div class="staff-role">Tech Operations Lead</div>
-        <p class="staff-bio">Runs the tech behind CourtTrack, live scoring, and stat tracking for Southbay Hoops.</p>
+        <p class="staff-bio">Runs game day for Southbay Hoops — overseeing leagues, live scoring, and stat tracking, and keeping CourtTrack running behind the scenes.</p>
       </div>
     </div>
   </div>
@@ -569,6 +592,14 @@
 <script>
   function openModal() { document.getElementById('donateModal').classList.add('open'); }
   function closeModal() { document.getElementById('donateModal').classList.remove('open'); }
+  function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.getElementById('navHamburger').classList.toggle('open');
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('navHamburger').classList.remove('open');
+  }
   document.getElementById('donateModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
   function showLegal(page) {
