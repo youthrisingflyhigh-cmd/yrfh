@@ -6,40 +6,41 @@
   <title>Youth Rising Fly High | Bay Area, CA</title>
   <meta name="description" content="YRFH empowers Bay Area youth through sports, culture, mentorship, and life skills. 501(c)(3) Nonprofit · EIN: 86-1229572"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Nunito', sans-serif; background: #FFFDF9; color: #1a1a1a; overflow-x: hidden; }
+    body { font-family: 'Nunito', sans-serif; background: #FDFBF2; color: #1a1a1a; overflow-x: hidden; }
+    h1, h2, h3, .section-title, .nav-logo-name, .foot-logo-name, .val-num, .legal-header h1 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.3px; }
 
     /* NAV */
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 36px; background: #FFFDF9; border-bottom: 1px solid #F0EBE0; position: sticky; top: 0; z-index: 50; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 36px; background: #FDFBF2; border-bottom: 1px solid #F0EBE0; position: sticky; top: 0; z-index: 50; }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .nav-logo-svg { width: 42px; height: 42px; flex-shrink: 0; }
     .nav-logo-name { font-size: 15px; font-weight: 900; color: #1a1a1a; line-height: 1.15; }
-    .nav-logo-name em { color: #FF6B35; font-style: normal; }
+    .nav-logo-name em { color: #C9A227; font-style: normal; }
     .nav-logo-loc { font-size: 10px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
     .nav-links { display: flex; gap: 24px; font-size: 14px; font-weight: 700; }
     .nav-links a { color: #555; text-decoration: none; }
-    .nav-links a:hover { color: #FF6B35; }
+    .nav-links a:hover { color: #C9A227; }
     .nav-right { display: flex; gap: 8px; align-items: center; }
-    .btn-secondary { background: #fff; color: #FF6B35; border: 2px solid #FF6B35; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
-    .btn-secondary:hover { background: #FFF5EE; }
+    .btn-secondary { background: #fff; color: #C9A227; border: 2px solid #C9A227; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
+    .btn-secondary:hover { background: #FBF3DC; }
     .btn-donate-nav { background: #1a1a1a; color: #fff; border: none; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
     .btn-donate-nav:hover { background: #333; }
 
     /* HERO */
-    .hero { background: #FFF5EE; padding: 64px 36px 0; text-align: center; overflow: hidden; }
+    .hero { background: #FBF3DC; padding: 64px 36px 0; text-align: center; overflow: hidden; }
     .hero-logo-mark { margin: 0 auto 18px; display: block; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: #FFE8DC; color: #C94A1A; font-size: 12px; font-weight: 800; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; border: 1.5px solid #FFCDB2; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: #F3E4B8; color: #7A5A12; font-size: 12px; font-weight: 800; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; border: 1.5px solid #E8CD86; }
     .hero h1 { font-size: 52px; font-weight: 900; color: #1a1a1a; line-height: 1.1; margin-bottom: 16px; max-width: 640px; margin-left: auto; margin-right: auto; }
-    .hero h1 em { color: #FF6B35; font-style: normal; }
+    .hero h1 em { color: #C9A227; font-style: normal; }
     .hero p { font-size: 16px; color: #666; line-height: 1.75; max-width: 500px; margin: 0 auto 32px; font-weight: 600; }
     .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
-    .btn-main { background: #FF6B35; color: #fff; border: none; padding: 16px 32px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
-    .btn-main:hover { background: #e55a26; }
-    .btn-outline { background: #fff; color: #FF6B35; border: 2.5px solid #FF6B35; padding: 13px 28px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
-    .btn-outline:hover { background: #FFF5EE; }
+    .btn-main { background: #C9A227; color: #fff; border: none; padding: 16px 32px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
+    .btn-main:hover { background: #A67C1E; }
+    .btn-outline { background: #fff; color: #C9A227; border: 2.5px solid #C9A227; padding: 13px 28px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
+    .btn-outline:hover { background: #FBF3DC; }
 
     .hero-img-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; max-width: 720px; margin: 0 auto; }
     .hero-img-card { border-radius: 20px 20px 0 0; overflow: hidden; height: 210px; position: relative; }
@@ -48,16 +49,16 @@
     .hero-img-label { position: absolute; bottom: 10px; left: 12px; font-size: 11px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; }
 
     /* MISSION */
-    .mission { padding: 64px 36px; text-align: center; background: #FFFDF9; }
-    .section-eyebrow { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #FF6B35; margin-bottom: 10px; }
+    .mission { padding: 64px 36px; text-align: center; background: #FDFBF2; }
+    .section-eyebrow { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #C9A227; margin-bottom: 10px; }
     .section-title { font-size: 34px; font-weight: 900; color: #1a1a1a; line-height: 1.15; margin-bottom: 14px; }
     .section-sub { font-size: 15px; color: #666; line-height: 1.75; max-width: 560px; margin: 0 auto; font-weight: 600; }
 
     /* PROGRAMS */
-    .prog-wrap { padding: 48px 36px 64px; background: #FFFDF9; }
+    .prog-wrap { padding: 48px 36px 64px; background: #FDFBF2; }
     .prog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 16px; }
     .prog-card { background: #fff; border-radius: 20px; padding: 28px 20px; border: 2px solid #F0EBE0; text-align: center; transition: all 0.2s; }
-    .prog-card:hover { border-color: #FFCDB2; transform: translateY(-2px); }
+    .prog-card:hover { border-color: #E8CD86; transform: translateY(-2px); }
     .prog-emoji { font-size: 34px; margin-bottom: 14px; display: block; }
     .prog-card h3 { font-size: 15px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; }
     .prog-card p { font-size: 13px; color: #777; line-height: 1.6; font-weight: 600; }
@@ -66,32 +67,32 @@
     .tag-low { background: #FFF8E1; color: #F57F17; }
 
     /* PHOTO GRID */
-    .photo-sec { padding: 0 36px 64px; background: #FFFDF9; }
+    .photo-sec { padding: 0 36px 64px; background: #FDFBF2; }
     .photo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
     .photo-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 16px; display: block; transition: transform 0.3s; }
     .photo-grid img:hover { transform: scale(1.02); }
     .photo-grid img:first-child { grid-column: span 2; height: 260px; }
 
     /* COMMUNITY */
-    .community { background: #FFF5EE; padding: 64px 36px; border-top: 1px solid #F0EBE0; border-bottom: 1px solid #F0EBE0; }
+    .community { background: #FBF3DC; padding: 64px 36px; border-top: 1px solid #F0EBE0; border-bottom: 1px solid #F0EBE0; }
     .comm-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 32px; }
     .comm-card { background: #fff; border-radius: 20px; padding: 24px 20px; border: 2px solid #F0EBE0; transition: all 0.2s; }
-    .comm-card:hover { border-color: #FFCDB2; transform: translateY(-2px); }
+    .comm-card:hover { border-color: #E8CD86; transform: translateY(-2px); }
     .comm-emoji { font-size: 28px; margin-bottom: 12px; display: block; }
     .comm-card h3 { font-size: 15px; font-weight: 900; color: #1a1a1a; margin-bottom: 6px; }
     .comm-card p { font-size: 13px; color: #777; line-height: 1.6; font-weight: 600; }
-    .comm-tag { display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 50px; background: #FFE8DC; color: #C94A1A; }
+    .comm-tag { display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 50px; background: #F3E4B8; color: #7A5A12; }
 
     /* VALUES */
-    .values { padding: 64px 36px; text-align: center; background: #FFFDF9; }
+    .values { padding: 64px 36px; text-align: center; background: #FDFBF2; }
     .val-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 32px; }
     .val-card { background: #fff; border-radius: 20px; padding: 28px 20px; border: 2px solid #F0EBE0; text-align: left; }
-    .val-num { font-size: 11px; font-weight: 800; color: #FF6B35; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+    .val-num { font-size: 11px; font-weight: 800; color: #C9A227; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
     .val-card h3 { font-size: 16px; font-weight: 900; color: #1a1a1a; margin-bottom: 6px; }
     .val-card p { font-size: 13px; color: #777; line-height: 1.6; font-weight: 600; }
 
     /* DONATE CTA */
-    .donate-cta { background: #FF6B35; padding: 64px 36px; text-align: center; }
+    .donate-cta { background: #C9A227; padding: 64px 36px; text-align: center; }
     .donate-cta h2 { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 14px; line-height: 1.15; }
     .donate-cta p { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 480px; margin: 0 auto 32px; font-weight: 600; }
     .btn-donate-big { background: #1a1a1a; color: #fff; padding: 18px 40px; border-radius: 50px; font-size: 16px; font-family: 'Nunito', sans-serif; font-weight: 900; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
@@ -103,20 +104,20 @@
     .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
     .foot-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
     .foot-logo-name { font-size: 16px; font-weight: 900; color: #fff; }
-    .foot-logo-name em { color: #FF6B35; font-style: normal; }
+    .foot-logo-name em { color: #C9A227; font-style: normal; }
     .foot-desc { font-size: 13px; color: #888; line-height: 1.65; margin-bottom: 16px; font-weight: 600; }
     .foot-ein { background: #2a2a2a; border-radius: 10px; padding: 12px 16px; display: inline-block; }
-    .foot-ein-label { font-size: 10px; font-weight: 800; color: #FF6B35; text-transform: uppercase; letter-spacing: 1px; }
+    .foot-ein-label { font-size: 10px; font-weight: 800; color: #C9A227; text-transform: uppercase; letter-spacing: 1px; }
     .foot-ein-val { font-size: 15px; font-weight: 900; color: #fff; margin-top: 2px; }
     .foot-ein-sub { font-size: 11px; color: #666; margin-top: 2px; font-weight: 600; }
-    .foot-col-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #FF6B35; margin-bottom: 14px; }
+    .foot-col-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #C9A227; margin-bottom: 14px; }
     .foot-col a { display: block; font-size: 13px; font-weight: 700; color: #888; text-decoration: none; margin-bottom: 10px; }
     .foot-col a:hover { color: #fff; }
     .foot-bottom { border-top: 1px solid #2a2a2a; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
     .foot-bottom p { font-size: 12px; color: #555; font-weight: 600; }
     .legal { display: flex; gap: 16px; }
     .legal a { font-size: 12px; color: #555; text-decoration: none; font-weight: 700; }
-    .legal a:hover { color: #FF6B35; }
+    .legal a:hover { color: #C9A227; }
 
     /* MODAL */
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; align-items: center; justify-content: center; }
@@ -126,10 +127,10 @@
     .modal-close:hover { color: #111; }
     .modal-box h3 { font-size: 24px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; }
     .modal-sub { font-size: 14px; color: #777; margin-bottom: 24px; line-height: 1.6; font-weight: 600; }
-    .modal-donate-btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: #FF6B35; color: #fff; text-decoration: none; padding: 16px 24px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 800; margin-bottom: 12px; }
-    .modal-donate-btn:hover { background: #e55a26; }
-    .modal-ein { background: #FFF5EE; border-radius: 12px; padding: 12px 16px; font-size: 12px; color: #C94A1A; font-weight: 700; line-height: 1.6; }
-    .modal-ein strong { display: block; font-size: 14px; color: #8B3010; margin-bottom: 2px; }
+    .modal-donate-btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: #C9A227; color: #fff; text-decoration: none; padding: 16px 24px; border-radius: 50px; font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 800; margin-bottom: 12px; }
+    .modal-donate-btn:hover { background: #A67C1E; }
+    .modal-ein { background: #FBF3DC; border-radius: 12px; padding: 12px 16px; font-size: 12px; color: #7A5A12; font-weight: 700; line-height: 1.6; }
+    .modal-ein strong { display: block; font-size: 14px; color: #5C4210; margin-bottom: 2px; }
 
     /* LEGAL PAGES */
     .legal-page { display: none; }
@@ -142,8 +143,24 @@
     .legal-content p { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 10px; font-weight: 600; }
     .legal-content ul { padding-left: 18px; margin-bottom: 10px; }
     .legal-content ul li { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 4px; font-weight: 600; }
-    .legal-content a { color: #FF6B35; }
+    .legal-content a { color: #C9A227; }
     .legal-note { font-size: 12px; color: #999; margin-top: 40px; padding-top: 16px; border-top: 1px solid #F0EBE0; }
+
+    /* SIGNATURE: varsity stripe divider */
+    .stripe-divider { height: 10px; background: repeating-linear-gradient(-45deg, #C9A227 0 14px, #1a1a1a 14px 28px); }
+
+    /* STAFF */
+    .staff-header { background: #1a1a1a; padding: 56px 36px 40px; text-align: center; }
+    .staff-header h1 { font-size: 34px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .staff-header p { font-size: 14px; color: rgba(255,255,255,0.55); font-weight: 600; }
+    .staff-content { padding: 56px 36px 72px; max-width: 1000px; margin: 0 auto; }
+    .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .staff-card { background: #fff; border: 2px solid #F0EBE0; border-radius: 20px; padding: 30px 24px; text-align: center; transition: all 0.2s; }
+    .staff-card:hover { border-color: #E8CD86; transform: translateY(-3px); }
+    .staff-avatar { width: 84px; height: 84px; border-radius: 50%; background: #FBF3DC; border: 2.5px solid #C9A227; color: #7A5A12; font-family: 'Oswald', sans-serif; font-size: 26px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+    .staff-name { font-size: 18px; font-weight: 900; color: #1a1a1a; margin-bottom: 4px; }
+    .staff-role { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #C9A227; margin-bottom: 12px; }
+    .staff-bio { font-size: 13px; color: #777; line-height: 1.65; font-weight: 600; }
 
     /* RESPONSIVE */
     @media (max-width: 700px) {
@@ -195,11 +212,11 @@
   <nav class="nav">
     <a class="nav-logo" href="#">
       <svg class="nav-logo-svg" viewBox="0 0 60 60" aria-label="YRFH logo">
-        <path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/>
-        <path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/>
+        <path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#C9A227"/>
+        <path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#C9A227" opacity="0.55"/>
         <circle cx="30" cy="24" r="7" fill="#1a1a1a"/>
-        <path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/>
-        <path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M30,16 L30,4" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
+        <path d="M23,10 L30,2 L37,10" fill="none" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <div>
         <div class="nav-logo-name">Youth Rising <em>Fly High</em></div>
@@ -210,6 +227,7 @@
       <a href="#programs">Programs</a>
       <a href="#events">Events</a>
       <a href="#values">About</a>
+      <a href="#" onclick="showLegal('staff');return false;">Staff</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-right">
@@ -221,11 +239,11 @@
   <!-- HERO -->
   <section class="hero">
     <svg class="hero-logo-mark" width="72" height="72" viewBox="0 0 60 60" aria-hidden="true">
-      <path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/>
-      <path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/>
+      <path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#C9A227"/>
+      <path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#C9A227" opacity="0.55"/>
       <circle cx="30" cy="24" r="7" fill="#1a1a1a"/>
-      <path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/>
-      <path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M30,16 L30,4" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
+      <path d="M23,10 L30,2 L37,10" fill="none" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div class="hero-badge">📍 Bay Area, CA &nbsp;·&nbsp; EIN: 86-1229572</div>
     <h1>Empowering Youth.<br><em>Elevating</em> Community.</h1>
@@ -252,6 +270,8 @@
       </div>
     </div>
   </section>
+
+  <div class="stripe-divider"></div>
 
   <!-- MISSION -->
   <div class="mission">
@@ -376,17 +396,19 @@
     <div class="ein-note">EIN: 86-1229572 · Youth Rising Fly High is a 501(c)(3) nonprofit · Donations are tax-deductible</div>
   </div>
 
+  <div class="stripe-divider"></div>
+
   <!-- FOOTER -->
   <footer id="contact">
     <div class="foot-top">
       <div>
         <div class="foot-logo">
           <svg width="36" height="36" viewBox="0 0 60 60" aria-hidden="true">
-            <path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/>
-            <path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/>
+            <path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#C9A227"/>
+            <path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#C9A227" opacity="0.55"/>
             <circle cx="30" cy="24" r="7" fill="#fff"/>
-            <path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/>
-            <path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M30,16 L30,4" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
+            <path d="M23,10 L30,2 L37,10" fill="none" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class="foot-logo-name">Youth Rising <em>Fly High</em></div>
         </div>
@@ -408,6 +430,7 @@
       <div class="foot-col">
         <div class="foot-col-label">Organization</div>
         <a href="#values">About YRFH</a>
+        <a href="#" onclick="showLegal('staff');return false;">Staff</a>
         <a href="https://www.paypal.com/donate/?hosted_button_id=PYSS48NK89CPA" target="_blank">Donate</a>
         <a href="mailto:youthrisinflyhigh@gmail.com?subject=Sponsorship%20Inquiry">Sponsorships</a>
         <a href="mailto:youthrisinflyhigh@gmail.com">Contact</a>
@@ -426,11 +449,51 @@
 
 </div><!-- end #main-site -->
 
+<!-- STAFF -->
+<div id="page-staff" class="legal-page">
+  <nav class="nav">
+    <a class="nav-logo" href="#" onclick="hideLegal();return false;">
+      <svg class="nav-logo-svg" viewBox="0 0 60 60"><path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#C9A227"/><path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#C9A227" opacity="0.55"/><circle cx="30" cy="24" r="7" fill="#1a1a1a"/><path d="M30,16 L30,4" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/><path d="M23,10 L30,2 L37,10" fill="none" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><div class="nav-logo-name">Youth Rising <em>Fly High</em></div><div class="nav-logo-loc">Bay Area, CA</div></div>
+    </a>
+    <div class="nav-right">
+      <button class="btn-secondary" onclick="hideLegal()">← Back to Site</button>
+      <button class="btn-donate-nav" onclick="openModal()">Donate Now ❤️</button>
+    </div>
+  </nav>
+  <div class="staff-header">
+    <h1>Our Staff</h1>
+    <p>The people building YRFH and Southbay Hoops, day in and day out.</p>
+  </div>
+  <div class="staff-content">
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-avatar">R</div>
+        <div class="staff-name">Rizzo</div>
+        <div class="staff-role">Executive Director &amp; Founder</div>
+        <p class="staff-bio">Founded YRFH to bring free and low-cost sports, mentorship, and community programming to Bay Area youth.</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">J</div>
+        <div class="staff-name">Jesse</div>
+        <div class="staff-role">Operations Coordinator &amp; Development</div>
+        <p class="staff-bio">Keeps programs, leagues, and events running smoothly behind the scenes.</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">M</div>
+        <div class="staff-name">Matthew Ngiraswei</div>
+        <div class="staff-role">Tech Operations Lead</div>
+        <p class="staff-bio">Runs the tech behind CourtTrack, live scoring, and stat tracking for Southbay Hoops.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- TERMS OF USE -->
 <div id="page-terms" class="legal-page">
   <nav class="nav">
     <a class="nav-logo" href="#" onclick="hideLegal();return false;">
-      <svg class="nav-logo-svg" viewBox="0 0 60 60"><path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/><path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/><circle cx="30" cy="24" r="7" fill="#1a1a1a"/><path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/><path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="nav-logo-svg" viewBox="0 0 60 60"><path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#C9A227"/><path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#C9A227" opacity="0.55"/><circle cx="30" cy="24" r="7" fill="#1a1a1a"/><path d="M30,16 L30,4" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/><path d="M23,10 L30,2 L37,10" fill="none" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div><div class="nav-logo-name">Youth Rising <em>Fly High</em></div><div class="nav-logo-loc">Bay Area, CA</div></div>
     </a>
     <div class="nav-right">
@@ -467,7 +530,7 @@
 <div id="page-privacy" class="legal-page">
   <nav class="nav">
     <a class="nav-logo" href="#" onclick="hideLegal();return false;">
-      <svg class="nav-logo-svg" viewBox="0 0 60 60"><path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#FF6B35"/><path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#FF6B35" opacity="0.55"/><circle cx="30" cy="24" r="7" fill="#1a1a1a"/><path d="M30,16 L30,4" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/><path d="M23,10 L30,2 L37,10" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="nav-logo-svg" viewBox="0 0 60 60"><path d="M30,28 Q8,6 0,16 Q14,22 18,33Z" fill="#C9A227"/><path d="M30,28 Q52,6 60,16 Q46,22 42,33Z" fill="#C9A227" opacity="0.55"/><circle cx="30" cy="24" r="7" fill="#1a1a1a"/><path d="M30,16 L30,4" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/><path d="M23,10 L30,2 L37,10" fill="none" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div><div class="nav-logo-name">Youth Rising <em>Fly High</em></div><div class="nav-logo-loc">Bay Area, CA</div></div>
     </a>
     <div class="nav-right">
@@ -512,6 +575,7 @@
     document.getElementById('main-site').style.display = 'none';
     document.getElementById('page-terms').classList.remove('active');
     document.getElementById('page-privacy').classList.remove('active');
+    document.getElementById('page-staff').classList.remove('active');
     document.getElementById('page-' + page).classList.add('active');
     window.scrollTo(0, 0);
   }
@@ -519,6 +583,7 @@
     document.getElementById('main-site').style.display = 'block';
     document.getElementById('page-terms').classList.remove('active');
     document.getElementById('page-privacy').classList.remove('active');
+    document.getElementById('page-staff').classList.remove('active');
     window.scrollTo(0, 0);
   }
 </script>
